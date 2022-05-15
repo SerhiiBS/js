@@ -8,15 +8,12 @@
 </head>
 <body>
     <script>
-        function checkAge() {
-          const age = prompt("Введіть свій вік числом:", "");
-          if (age >= 18 && age <= 100) {
-            return console.log("Ура!!!");
-          } else {
-            return console.log(false);
-          }
-        }
-        checkAge();
+function checkAge() {
+  const age = prompt("Введіть свій вік числом:", "");
+  const result =
+    age >= 18 && age <= 100 ? console.log("Ура!!!") : console.log(false);
+}
+checkAge();
         </script>
 </body>
 </html>
