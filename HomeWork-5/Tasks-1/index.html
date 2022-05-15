@@ -12,11 +12,8 @@ function inputData() {
   for (let i = 0; i < 10; i++) {
     const value = prompt("Введіть число більше 100", "");
     const number = Number(value);
-    if (Number.isNaN(number)) {
+    if (Number.isNaN(number) || number > 100 || i === 9) {
       console.log(value);
-      break;
-    } else if (number > 100 || i === 9) {
-      console.log(number);
       return;
     }
   }
