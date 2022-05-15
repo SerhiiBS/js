@@ -10,15 +10,16 @@
   <script>
 function inputData() {
   for (let i = 0; i < 10; i++) {
-    const text = prompt("Введіть число більше 100", "");
-    const number = Number(text);
-    if (number === NaN) {
+    const value = prompt("Введіть число більше 100", "");
+    const number = Number(value);
+    if (Number.isNaN(number)) {
+      console.log(value);
       break;
     } else if (number > 100) {
       console.log(number);
       return;
     } else if (i === 9 || number !== number) {
-      console.log(text);
+      console.log(number);
       return;
     }
   }
