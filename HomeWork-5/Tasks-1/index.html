@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<script>
-        function inputData() {
-          for (let i = 0; i < 10; i++) {
-            const num = prompt("Введіть число більше 100", "");
-            if (num > 100) {
-              console.log(num);
-              return;
-            } else if (i === 9 || num !== num) {
-              console.log(num);
-              return;
-            }
-          }
-        }
-        inputData();
-        </script>, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    
+  <script>
+function inputData() {
+  for (let i = 0; i < 10; i++) {
+    const text = prompt("Введіть число більше 100", "");
+    const number = Number(text);
+    if (number === NaN) {
+      break;
+    } else if (number > 100) {
+      console.log(number);
+      return;
+    } else if (i === 9 || number !== number) {
+      console.log(text);
+      return;
+    }
+  }
+}
+inputData();
+  </script>
 </body>
 </html>
