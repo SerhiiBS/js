@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork-5</title>
+    <script>
+// Завдання №1
+function productOfNumbers(a) {
+  return (b) => {
+    return a * b;
+  };
+}
+// Завдання №2
+const array = [5, 5, 5, 5, "asdas", "asd", "asd"];
+
+function getAverageArray() {
+  const numbers = array.filter((x) => !isNaN(x));
+  const getSumArray = numbers.reduce((a, b) => a + b);
+  return getSumArray / numbers.length;
+}
+// Завдання №3
+function replaceString(string, pattern) {
+  let joinArrayToString = pattern.join("");
+
+  return string.replace(new RegExp(`[${joinArrayToString}]`, "gi"), "");
+}
+    </script>
+</head>
+<body>
+    <button onclick="console.log(productOfNumbers(5)(2))">Завдання №1</button>
+    <button onclick="console.log(getAverageArray())">Завдання №2</button>
+    <button onclick="console.log(replaceString('hello world', ['l', 'd']))">Завдання №3</button>  
+</body>
+</html>
