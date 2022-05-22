@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+// Функція конструктор по людині
+function inputDataHuman() {
+  function Human(name, age) {
+    this.Name = name;
+    this.Age = age;
+  }
+  const nameUser = prompt("Вкажіть своє імʼя:", "");
+  const ageUser = prompt("Вкажіть свій вік:", "");
+
+  let user = new Human(nameUser, ageUser);
+  console.log(user);
+}
+//  Функція конструкто по Автомобілю
+function inputDataCar() {
+  function Car(model, createYear, color, registrationNumber) {
+    this.model = model;
+    this.createYear = createYear;
+    this.color = color;
+    this.registrationNumber = registrationNumber;
+  }
+  const userCarModel = prompt("Вкажіть марку і мдель свого автомобіля через дефіс:", "");
+  const userCarCreateYear = prompt("Вкажіть рік виготовлення автомобіля:", "");
+  const userCarColor = prompt("Вкажіть колір автомобіля:", "");
+  const userCarRegistrationNumber = prompt("Вкажіть реєстраційний номер автомобіля:", "");
+
+  let userCar = new Car(userCarModel, userCarCreateYear, userCarColor, userCarRegistrationNumber);
+  console.log(userCar);
+}
+//  Поєднання двох конструкторів просто я робив по порядку
+function inputDataHC() {
+  inputDataHuman();
+  inputDataCar();
+}
+    </script>
+</head>
+
+
+<body>
+    <button onclick="inputDataHuman()">Human</button>
+    <button onclick="inputDataCar()">Car</button>
+    <button onclick="inputDataHC()">Human&Car</button>
+</body>
+</html>
