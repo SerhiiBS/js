@@ -13,11 +13,13 @@ const Person = function () {
     this.name = prompt("Вкажіть своє імʼя:", "");
     if (this.name === "") {
       this.name = "Anonim";
+    } else if (this.name === null) {
+      this.name = undefined;
     }
-    this.age = prompt("Вкажіть свій вік:", "");
+    this.age = +prompt("Вкажіть свій вік:", "");
     if (this.age < 18) {
       this.age = "Неповнолітній";
-    } else if (this.age !== "number") {
+    } else if (Number.isNaN(this.age)) {
       this.age = "Некоректно введена інформація";
     }
   };
