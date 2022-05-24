@@ -7,27 +7,32 @@
     <title>Document</title>
     <script>
       const Person = function () {
-        this.name = undefined;
-        this.age = undefined;
-        this.input = function () {
-          this.name = prompt("Вкажіть своє імʼя:", "");
-          this.age = prompt("Вкажіть свій вік:", "");
-          this.check = (this.age >= 18 && this.age <= 100) || (this.age !== "") || (this.name !== null) || (this.name !== "");
-          if (!this.check) "error";
-          return this.age, this.name;
-        };
+this.name = undefined;
+this.age = undefined;
+this.input = function () {
+  personName = prompt("Вкажіть своє імʼя:", "");
+  personAge = +prompt("Вкажіть свій вік:", "");
+  this.check = (personAge > 18) || (personName !== "");
+  if (!this.check) return 'error'; {
+  this.name = personName,
+  this.age = personAge;
+}
+  
+  }
 
-        this.get = function () {
-          console.log(this.name, this.age);
-        };
-      };
+this.get = function () {
+  console.log(this.name, this.age)
+}
+  
+}
 
-      let user = new Person();
+let user = new Person();
 
-      function showUser() {
-        user.input();
-        user.get();
-      }
+function showUser() {
+  user.input();
+  user.get();
+}
+    </script>
     </script>
 </head>
 <body>
