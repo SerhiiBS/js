@@ -12,7 +12,7 @@
         this.input = function () {
           this.name = prompt("Вкажіть своє імʼя:", "");
           this.age = prompt("Вкажіть свій вік:", "");
-          this.check = (this.age >= 18 && this.age <= 100) || this.age !== "" || this.name !== null || this.name !== "";
+          this.check = (this.age >= 18 && this.age <= 100) || (this.age !== "") || (this.name !== null) || (this.name !== "");
           if (!this.check) "error";
           return this.age, this.name;
         };
