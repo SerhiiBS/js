@@ -6,44 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-// Функція конструктор 
-const Person = function () {
-  this.name = undefined;
-  this.age = undefined;
-  this.inputInfo = function (name, age) {
-    this.name = prompt("Вкажіть своє імʼя:", "");
-    this.age = prompt("Вкажіть свій вік:", "");
-  };
+      const Person = function () {
+        this.name = undefined;
+        this.age = undefined;
+        this.input = function () {
+          this.name = prompt("Вкажіть своє імʼя:", "");
+          this.age = prompt("Вкажіть свій вік:", "");
+          this.check = (this.age >= 18 && this.age <= 100) || this.age !== "" || this.name !== null || this.name !== "";
+          if (!this.check) "error";
+          return this.age, this.name;
+        };
 
-  this.getInfo = function () {
-    console.log(`Name: ${this.name}, Age: ${this.age}`);
-  };
-};
+        this.get = function () {
+          console.log(this.name, this.age);
+        };
+      };
 
-const Car = function () {
-  this.modelCar = undefined;
-  this.createYearCar = undefined;
-  this.colorCar = undefined;
-  this.registrationNumber = undefined;
-  this.inputInfoCar = function (modelCar, createYearCar, colorCar, registrationNumber) {
-    this.modelCar = prompt("Марка і модель автомобіля", "");
-    this.createYearCar = prompt("Рік випуску автомобіля", "");
-    this.colorCar = prompt("Колір автомобіля", "");
-    this.registrationNumber = prompt("Реєстраційний номер автомобіля", "");
-  };
-  this.getInfoCar = function () {
-    console.log(`Car: ${this.modelCar}, Create year: ${this.createYearCar}, Color car: ${this.colorCar}, Registration numeber: ${this.registrationNumber} `);
-  };
-};
-let user = new Person();
-let cars = new Car();
-function human() {
-  user.inputInfo();
-  cars.inputInfoCar();
-  user.getInfo();
-  cars.getInfoCar();
-}
+      let user = new Person();
 
+      function showUser() {
+        user.input();
+        user.get();
+      }
     </script>
 </head>
 <body>
