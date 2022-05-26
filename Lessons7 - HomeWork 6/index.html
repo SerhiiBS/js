@@ -6,95 +6,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-          const Person = function () {
-          this.name = undefined;
-          this.age = undefined;
-          this.input = function () {
-            const userName = prompt("Вкажіть своє імʼя:", "");
-            const userAge = +prompt("Вкажіть свій вік:", "");
-            this.check = function (data) {
-              if (data !== "" || data !== null || isNaN(data) || data < 18) {
-                return data;
+const Person = function () {
+  this.name = undefined;
+  this.age = undefined;
+  this.input = function () {
+    const userName = prompt("Вкажіть своє імʼя:", "");
+    const userAge = +prompt("Вкажіть свій вік:", "");
+        this.checkValue = function (data) {
+          switch (typeof data) {
+            case "string":
+              if (data === "") {
+                return true;
               }
-            };
-            if (this.check(userName)) {
-              this.name = userName;
-            } else {
-              this.name = "DATA ENTER ERROR";
-            }
-            if (this.check(userAge)) {
-              this.age = userAge;
-            } else {
-              this.age = "DATA ENTER ERROR";
-            }
-          };
-
-          this.get = function () {
-            console.log(this.name, this.age);
-          };
-        };
-
-        const Car = function () {
-          this.modelCar = undefined;
-          this.createYearCar = undefined;
-          this.colorCar = undefined;
-          this.registrationNumber = undefined;
-          this.inputInfoCar = function () {
-            const model = prompt("Марка і модель автомобіля", "");
-            const carYear = prompt("Рік випуску автомобіля", "");
-            const color = prompt("Колір автомобіля", "");
-            const regNumCar = prompt("Реєстраційний номер автомобіля", "");
-            this.check = function (data) {
-              if (data !== "" || data !== null || isNaN(data)) {
-                return data;
+              break;
+            case "object":
+              if (data === null) {
+                return true;
               }
-            };
-            if (this.check(model)) {
-              this.modelCar = model;
-            } else {
-              this.modelCar = "DATA ENTER ERROR";
-            }
-            if (this.check(carYear)) {
-              this.createYearCar = carYear;
-            } else {
-              this.createYearCar = "DATA ENTER ERROR";
-            }
-            if (this.check(color)) {
-              this.colorCar = color;
-            } else {
-              this.colorCar = "DATA ENTER ERROR";
-            }
-            if (this.check(regNumCar)) {
-              this.registrationNumber = regNumCar;
-            } else {
-              this.registrationNumber = "DATA ENTER ERROR";
-            }
-          };
+              break;
+            case "number":
+              if (data < 18 || data > 100 || isNaN(data)) {
+                return true;
+              }
+              break;
+        }};
+      if (this.checkValue(userName)) {
+        this.name = 'Invalid name';
+      } else {
+        this.name = userName;
+      }
+      if (this.checkValue(userAge)) {
+        this.age = "Invalid age";
+      } else {
+        this.age = userAge;
+      }
 
-          this.getInfoCar = function () {
-            console.log(`Car: ${this.modelCar}, Create year: ${this.createYearCar}, Color car: ${this.colorCar}, Registration numeber: ${this.registrationNumber} `);
-          };
-          this.carPerson = function (user, userCar, carRegNum) {
-            console.log(`${user} володіє ${userCar} з реєстраційним номером ${carRegNum}`);
-          };
-        };
 
-        const user = new Person();
-        const userCar = new Car();
+  };
 
-        function showUser() {
-          user.input();
-          user.get();
-          userCar.inputInfoCar();
-          userCar.getInfoCar();
-          userCar.carPerson(user.name, userCar.modelCar, userCar.registrationNumber);
-        }
+  this.get = function () {
+    console.log(this.name, this.age);
+  };
+};
+
+const Car = function () {
+  this.modelCar = undefined;
+  this.createYearCar = undefined;
+  this.colorCar = undefined;
+  this.registrationNumber = undefined;
+  this.inputInfoCar = function () {
+    const model = prompt("Марка і модель автомобіля", "");
+    const carYear = +prompt("Рік випуску автомобіля", "");
+    const color = prompt("Колір автомобіля", "");
+    const regNumCar = prompt("Реєстраційний номер автомобіля", ""); 
+          this.checkValue = function (data) {
+                switch (typeof data) {
+                  case "string":
+                    if (data === "") {
+                      return true;
+                    }
+                    break;
+                  case "object":
+                    if (data === null) {
+                      return true;
+                    }
+                    break;
+                  case "number":
+                    if (data < 1900 || isNaN(data)) {
+                      return true;
+                    }
+                    break;
+              }}
+  
+                if (this.checkValue(model)) {
+                    this.modelCar = 'DATA ENTER ERROR'
+                } else {
+                    this.modelCar = model
+                }
+                if (this.checkValue(carYear)) {
+                    this.createYearCar = 'DATA ENTER ERROR'
+                } else {
+                    this.createYearCar = carYear
+                }
+                if (this.checkValue(color)) {
+                    this.colorCar = 'DATA ENTER ERROR'
+                } else {
+                    this.colorCar = color
+                }
+                if (this.checkValue(regNumCar)) {
+                    this.registrationNumber = 'DATA ENTER ERROR'
+                } else {
+                    this.registrationNumber = regNumCar
+                }
+   }
+
+  this.getInfoCar = function () {
+    console.log(`Car: ${this.modelCar}, Create year: ${this.createYearCar}, Color car: ${this.colorCar}, Registration numeber: ${this.registrationNumber} `);
+  };
+  this.carPerson = function (user, userCar, carRegNum) {
+    console.log (`${user} володіє ${userCar} з реєстраційним номером ${carRegNum}`)
+  };
+};
+
+const user = new Person();
+const userCar = new Car();
+
+function showUser() {
+  user.input();
+  user.get();
+  userCar.inputInfoCar();
+  userCar.getInfoCar();
+  userCar.carPerson(user.name, userCar.modelCar, userCar.registrationNumber);
+}
+
     </script>
 </head>
 
 
 <body>
-    <button onclick="human()">start</button>
-
+    <button onclick="showUser()">user</button>
+    
 </body>
 </html>
+
