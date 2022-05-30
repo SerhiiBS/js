@@ -1,5 +1,5 @@
 const jsButton4 = document.querySelector(".js__button4");
-const elem = document.querySelector("#js__elem");
+const elem = document.querySelector("#js__table");
 const createTable = function () {
   const parent = elem;
   const colums = 10;

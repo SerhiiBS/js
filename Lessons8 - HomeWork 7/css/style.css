@@ -1,5 +1,5 @@
 .css__div {
-    display: flex;   
+    display: flex;
 
 }
 
@@ -7,21 +7,21 @@
     width: max-content;
     padding: 10px;
     margin: 10px;
-    outline: 2px solid rgb(90, 113, 150); 
-    background: #f0f0f0;   
+    outline: 2px solid rgb(90, 113, 150);
+    background: #f0f0f0;
 }
 
 .boder2 {
     display: grid;
     grid-column: auto;
-    
+
     padding: 10px;
     margin: 10px;
-    outline: 2px solid rgb(90, 113, 150); 
-    background: #f0f0f0; 
+    outline: 2px solid rgb(90, 113, 150);
+    background: #f0f0f0;
 }
+
 table td {
     padding: 20px;
     border: 2px solid black;
 }
-

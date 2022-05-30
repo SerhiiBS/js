@@ -1,6 +1,8 @@
 const jsButton = document.querySelector(".js__button");
 const jsText = document.querySelector(".js__text1");
+
 jsText.style.color = "black";
+
 function onClick() {
   if (jsText.style.color === "black") {
     jsText.style.color = "red";
@@ -8,4 +10,5 @@ function onClick() {
     jsText.style.color = "black";
   }
 }
+
 jsButton.addEventListener("click", onClick);
