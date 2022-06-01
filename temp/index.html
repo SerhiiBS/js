@@ -1,98 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        const Person = function () {
-          this.name = undefined;
-          this.age = undefined;
-          this.input = function () {
-            const userName = prompt("Вкажіть своє імʼя:", "");
-            const userAge = +prompt("Вкажіть свій вік:", "");
-            this.check = function (data) {
-              if (data !== "" || data !== null || isNaN(data) || data < 18) {
-                return data;
-              }
-            };
-            if (this.check(userName)) {
-              this.name = userName;
-            } else {
-              this.name = "DATA ENTER ERROR";
-            }
-            if (this.check(userAge)) {
-              this.age = userAge;
-            } else {
-              this.age = "DATA ENTER ERROR";
-            }
-          };
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/style.css">
 
-          this.get = function () {
-            console.log(this.name, this.age);
-          };
-        };
-
-        const Car = function () {
-          this.modelCar = undefined;
-          this.createYearCar = undefined;
-          this.colorCar = undefined;
-          this.registrationNumber = undefined;
-          this.inputInfoCar = function () {
-            const model = prompt("Марка і модель автомобіля", "");
-            const carYear = prompt("Рік випуску автомобіля", "");
-            const color = prompt("Колір автомобіля", "");
-            const regNumCar = prompt("Реєстраційний номер автомобіля", "");
-            this.check = function (data) {
-              if (data !== "" || data !== null || isNaN(data)) {
-                return data;
-              }
-            };
-            if (this.check(model)) {
-              this.modelCar = model;
-            } else {
-              this.modelCar = "DATA ENTER ERROR";
-            }
-            if (this.check(carYear)) {
-              this.createYearCar = carYear;
-            } else {
-              this.createYearCar = "DATA ENTER ERROR";
-            }
-            if (this.check(color)) {
-              this.colorCar = color;
-            } else {
-              this.colorCar = "DATA ENTER ERROR";
-            }
-            if (this.check(regNumCar)) {
-              this.registrationNumber = regNumCar;
-            } else {
-              this.registrationNumber = "DATA ENTER ERROR";
-            }
-          };
-
-          this.getInfoCar = function () {
-            console.log(`Car: ${this.modelCar}, Create year: ${this.createYearCar}, Color car: ${this.colorCar}, Registration numeber: ${this.registrationNumber} `);
-          };
-          this.carPerson = function (user, userCar, carRegNum) {
-            console.log(`${user} володіє ${userCar} з реєстраційним номером ${carRegNum}`);
-          };
-        };
-
-        const user = new Person();
-        const userCar = new Car();
-
-        function showUser() {
-          user.input();
-          user.get();
-          userCar.inputInfoCar();
-          userCar.getInfoCar();
-          userCar.carPerson(user.name, userCar.modelCar, userCar.registrationNumber);
-        }
-    </script>
-    </script>
 </head>
+
 <body>
-    <button onclick="human()">Human</button>
+
+  <div class="css--main">
+    <div class="css--front-img">
+      <img class="css--img">
+    </div>
+    <div class="css--card">
+      <form action="#" class="form js--form">
+        <p><input type="number" id="card-number" class="js--input-number-card" required></p>
+        <!-- <p><input type="text" id="card-holdername" class="js--input-holder-name" required></p>
+                        <select id="card-month" class="js--input-month" required>     
+                            <option value="january">January</option>
+                            <option value="february">February</option>
+                            <option value="march">March</option>
+                            <option value="april">April</option>
+                            <option value="may">May</option>
+                            <option value="june">June</option>
+                            <option value="july">July</option>
+                            <option value="august">August</option>
+                            <option value="september">September</option>
+                            <option value="october">October</option>
+                            <option value="november">November</option>
+                            <option value="december">December</option>
+                        </select> 
+                        <select id="year" class='js--input-year' required>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                        </select> 
+                    <input type="number" id="cvv" class="js--input-cvv" required> -->
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+  </div>
+
 </body>
+
 </html>
