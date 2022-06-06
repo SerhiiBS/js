@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: rgb(81 156 161);
+    height: auto;
+}
+
+.left {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+}
+
+.card-wrapper {
+    padding-top: 5%;
+    width: 500px;
+    height: 250px;
+    /* border: 1px solid gray; */
+
+    position: relative;
+
+}
+
+.card-back,
+.card-front {
+    width: 350px;
+    height: 200px;
+    /* border: 1px solid gray; */
+    border-radius: 10px;
+    position: absolute;
+}
+
+.card-back {
+    right: 0;
+    bottom: 0;
+    background-image: url(../new/img/rear.jpg);
+    background-size: contain;
+}
+
+.card-front {
+    background-image: url(../new/img/front.jpeg);
+    background-size: contain;
+}
+
+.card-back-line {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(21, 21, 21);
+    position: absolute;
+    top: 25px;
+}
+
+#cvv {
+    width: 30px;
+}
+
+.cvv {
+    position: absolute;
+    right: 20px;
+    bottom: 52px;
+    height: 20px;
+    width: 30px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color: gold;
+    border-radius: 5px;
+}
+
+.number-card {
+    position: absolute;
+    width: 90%;
+    margin: 0 5%;
+    font-size: 30px;
+    padding: 5px;
+    color: gold;
+    top: 75px;
+    text-align: center;
+    outline: none;
+}
+
+.month,
+.year {
+    position: absolute;
+    color: gold;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+    border: none;
+    width: 30px;
+    text-align: center;
+    bottom: 40px;
+    left: 35%;
+}
+
+.year {
+    left: 50%;
+}
+
+.holder-name {
+    position: absolute;
+    width: 40%;
+    font-size: 20px;
+    bottom: 10%;
+    left: 10%;
+    color: gold;
+}
+
+/* Style form */
+.container-form {
+    /* padding-bottom: 2%; */
+    display: flex;
+    height: 50vh;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+
+}
+
+.container-form label {
+    padding: 10px 10px;
+}
+
+input {
+    background-color: none;
+}
+
+.change-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form {
+    padding-bottom: 5%;
+    text-align: center;
+}
+
+.button {
+    margin-top: 15px;
+    height: 40px;
+    width: 125px;
+}
+.input--cvv {
+    width: 30px;
+}
