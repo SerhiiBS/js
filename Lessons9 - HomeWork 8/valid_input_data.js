@@ -4,12 +4,15 @@ function formValidate(field) {
     field.inputNumber.addEventListener('input', function () {
 
         const value = this.value;
-        this.value = value.substring(0, 16);
-        document.querySelector('.js--input-number').innerHTML = `
-                    ${value.substring(0, 4)} ${value.substring(4, 8)}
-                    ${value.substring(8, 12)} ${value.substring(12, 16)}
-                `;
-        checkAllField()
+        if (value.length > 16) {
+            this.value = value.substring(0, 16);
+            document.querySelector('.js--input-number').innerHTML = `
+                        ${value.substring(0, 4)} ${value.substring(4, 8)}
+                        ${value.substring(8, 12)} ${value.substring(12, 16)}
+                    `;
+            checkAllField()
+        }
+
     });
 
     field.inputHolderName.addEventListener('input', function () {
@@ -19,6 +22,8 @@ function formValidate(field) {
             checkAllField()
         }
     });
+
+
 
     field.inputMonth.addEventListener('input', function () {
         if (this.value !== 'null') {
@@ -48,6 +53,8 @@ function formValidate(field) {
         }
         if (valid) {
             document.querySelector('.js--submit').disabled = false;
+        } else {
+            document.querySelector('.js--submit').disabled = true;
         }
     }
 
