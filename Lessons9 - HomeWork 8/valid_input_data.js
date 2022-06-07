@@ -10,17 +10,18 @@ function formValidate(field) {
                         ${value.substring(0, 4)} ${value.substring(4, 8)}
                         ${value.substring(8, 12)} ${value.substring(12, 16)}
                     `;
-            checkAllField()
-        }
 
+        }
+        checkAllField()
     });
 
     field.inputHolderName.addEventListener('input', function () {
         const value = this.value;
         if (value.length > 3) {
             document.querySelector('.js--input-holder-name').innerHTML = value;
-            checkAllField()
+
         }
+        checkAllField()
     });
 
 
@@ -28,21 +29,25 @@ function formValidate(field) {
     field.inputMonth.addEventListener('input', function () {
         if (this.value !== 'null') {
             document.querySelector('.js--input-month').innerHTML = this.value
-            checkAllField()
+
         }
+        checkAllField()
     });
 
     field.inputYear.addEventListener('input', function () {
         if (this.value !== 'null') {
             document.querySelector('.js--input-year').innerHTML = this.value
-            checkAllField()
+
         }
+        checkAllField()
     });
 
     field.inputCvv.addEventListener('input', function () {
         const value = this.value;
-        this.value = value.substring(0, 3);
-        document.querySelector('.js--input-cvv').innerHTML = value.substring(0, 3);
+        if (value.length >= 3) {
+            this.value = value.substring(0, 3);
+            document.querySelector('.js--input-cvv').innerHTML = value.substring(0, 3);
+        }
         checkAllField()
     });
 
