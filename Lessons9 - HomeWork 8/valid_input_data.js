@@ -4,7 +4,7 @@ function formValidate(field) {
     field.inputNumber.addEventListener('input', function () {
 
         const value = this.value;
-        if (value.length > 16) {
+        if (value.length >= 16) {
             this.value = value.substring(0, 16);
             document.querySelector('.js--input-number').innerHTML = `
                         ${value.substring(0, 4)} ${value.substring(4, 8)}
@@ -50,7 +50,7 @@ function formValidate(field) {
         }
         checkAllField()
     });
-
+    
     function checkAllField() {
         let valid = false;
         for (let key in field) {
@@ -62,8 +62,9 @@ function formValidate(field) {
             document.querySelector('.js--submit').disabled = true;
         }
     }
-
 };
+
+
 
 
 formValidate({
