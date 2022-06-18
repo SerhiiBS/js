@@ -3,7 +3,7 @@ function formValidate(field) {
         const value = this.value;
 
         const bigLetter = function () {
-            if (value.match(/[A-Z]/)) {
+            if (value.match(/[A-ZА-ЯЁ]/)) {
                 document.querySelector('.big-letter').classList.add('valid')
                 document.querySelector('.big-letter').classList.remove('invalid')
             } else {
