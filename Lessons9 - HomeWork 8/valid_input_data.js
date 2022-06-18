@@ -17,10 +17,9 @@ function formValidate(field) {
     field.inputHolderName.addEventListener('input', function () {
         const value = this.value;
         if (value.length > 3) {
-            document.querySelector('.js--input-holder-name').innerHTML = value;
-
+            checkAllField()
         }
-        checkAllField()
+        document.querySelector('.js--input-holder-name').innerHTML = value;
     });
 
 
