@@ -37,7 +37,7 @@ const slider = function () {
     }
 
     const autoSlider = function () {
-        timer = setTimeout(nextSlide, 1000);
+        timer = setTimeout(nextSlide, 5000);
         if (currentIndexSlide === slides.length - 1) {
             clearTimeout(timer);
         }
