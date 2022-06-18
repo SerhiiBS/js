@@ -2,6 +2,7 @@ const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
 const slides = document.querySelectorAll('.slide');
 
+
 let currentIndexSlide = 0;
 let timer;
 
@@ -22,18 +23,23 @@ const slider = function () {
     showButtons();
 
     const nextSlide = function() {
-        slides[currentIndexSlide].classList.remove('active');
-        currentIndexSlide++;
-        slides[currentIndexSlide].classList.add('active');
+        if (currentIndexSlide !== slides.length - 1) {
+            slides[currentIndexSlide].classList.remove('active');
+            currentIndexSlide++;
+            slides[currentIndexSlide].classList.add('active');
+            showButtons();
+            clearInterval(timer);
+            autoSlider();
+        }
 
-        showButtons();
-        autoSlider();
     }
     const prevSlide = function() {
-        slides[currentIndexSlide].classList.remove('active');
-        currentIndexSlide--;
-        slides[currentIndexSlide].classList.add('active');
-        showButtons();
+        if (currentIndexSlide === 0) {
+            slides[currentIndexSlide].classList.remove('active');
+            currentIndexSlide--;
+            slides[currentIndexSlide].classList.add('active');
+            showButtons();
+        }
     }
 
     const autoSlider = function () {
