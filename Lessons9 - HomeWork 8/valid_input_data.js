@@ -5,14 +5,13 @@ function formValidate(field) {
 
         const value = this.value;
         if (value.length >= 16) {
-            this.value = value.substring(0, 16);
-            document.querySelector('.js--input-number').innerHTML = `
-                        ${value.substring(0, 4)} ${value.substring(4, 8)}
-                        ${value.substring(8, 12)} ${value.substring(12, 16)}
-                    `;
-
+            checkAllField()
         }
-        checkAllField()
+        this.value = value.substring(0, 16);
+        document.querySelector('.js--input-number').innerHTML = `
+                     ${value.substring(0, 4)} ${value.substring(4, 8)}
+                     ${value.substring(8, 12)} ${value.substring(12, 16)}
+                 `;
     });
 
     field.inputHolderName.addEventListener('input', function () {
@@ -29,7 +28,6 @@ function formValidate(field) {
     field.inputMonth.addEventListener('input', function () {
         if (this.value !== 'null') {
             document.querySelector('.js--input-month').innerHTML = this.value
-
         }
         checkAllField()
     });
@@ -37,7 +35,6 @@ function formValidate(field) {
     field.inputYear.addEventListener('input', function () {
         if (this.value !== 'null') {
             document.querySelector('.js--input-year').innerHTML = this.value
-
         }
         checkAllField()
     });
@@ -45,10 +42,10 @@ function formValidate(field) {
     field.inputCvv.addEventListener('input', function () {
         const value = this.value;
         if (value.length >= 3) {
-            this.value = value.substring(0, 3);
-            document.querySelector('.js--input-cvv').innerHTML = value.substring(0, 3);
+            checkAllField()
         }
-        checkAllField()
+        this.value = value.substring(0, 3);
+        document.querySelector('.js--input-cvv').innerHTML = value.substring(0, 3);
     });
     
     function checkAllField() {
