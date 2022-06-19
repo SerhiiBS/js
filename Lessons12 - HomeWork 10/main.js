@@ -53,11 +53,19 @@ function UserTable(params) {
         const deleteButton = currentElement.querySelector('.js--delete');
 
 
-        const deleteUser = function () {
+        const deleteUserElement = function () {
             currentElement.remove();
         }
-
-        deleteButton.addEventListener('click', deleteUser);
+        const deleteElementLocalsotrage = function (user) {
+            const users = JSON.parse(localStorage.getItem("users"));
+            if (users) {
+                users.forEach(user => {
+                    console.log(user)
+                })
+            }
+        }
+        deleteButton.addEventListener('click', deleteUserElement);
+        deleteButton.addEventListener('click', deleteElementLocalsotrage);
 
     }
 
