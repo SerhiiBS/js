@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container-card">
+        <div class="left">
+
+            <div class="card-wrapper">
+                <div class="card-back">
+                    <div class="card-back-line"></div>
+                    <div class="cvv">
+                        <span class="js--input-cvv"></span>
+                    </div>
+                </div>
+                <div class="card-front">
+                    <div class="number-card">
+                        <span class="js--input-number"></span>
+                    </div>
+                    <div class="month">
+                        <span class="js--input-month"></span>
+                    </div>
+                    <div class="year">
+                        <span class="js--input-year"></span>
+                    </div>
+                    <div class="holder-name">
+                        <span class="js--input-holder-name"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+
+        </div>
+    </div>
+    <div class="container-form">
+        <form class="form js--form">
+            <label>
+                <p>Input number card: <input type="text" class="js--number" required></p>
+            </label>
+            <label>
+                <p>Input holder name: <input type="text" maxlength="10" class="js--holder-name" required></p>
+            </label>
+            <div class="change-data">
+                <label>
+                    <p>Change month:
+                        <select id="card-month" class="js--month" required>
+                            <option value="0" disabled selected>Month</option>
+                            <option value="01">January</option>
+                            <option value="02">February</option>
+                            <option value="03">March</option>
+                            <option value="04">April</option>
+                            <option value="05">May</option>
+                            <option value="06">June</option>
+                            <option value="07">July</option>
+                            <option value="08">August</option>
+                            <option value="09">September</option>
+                            <option value="10">October</option>
+                            <option value="11">November</option>
+                            <option value="12">December</option>
+                        </select>
+                    </p>
+                </label>
+                <label>
+                    <p>Change year
+                        <select id="year" class='js--year' required>
+                            <option value="0" disabled selected>Year</option>
+                            <option value="18">2018</option>
+                            <option value="19">2019</option>
+                            <option value="20">2020</option>
+                            <option value="21">2021</option>
+                            <option value="22">2022</option>
+                            <option value="23">2023</option>
+                            <option value="24">2024</option>
+                            <option value="25">2025</option>
+                            <option value="26">2026</option>
+                            <option value="27">2027</option>
+                            <option value="28">2028</option>
+                            <option value="29">2029</option>
+                        </select>
+                    </p>
+                </label>
+            </div>
+            <label>
+                <p>Input your CVV: <input type="password" class="js--cvv input--cvv" required></p>
+            </label>
+            <button type="submit" class="button js--submit" disabled>Підтвердити</button>
+
+        </form>
+    </div>
+</body>
+<script src="valid_input_data.js"></script>
+<script src="constructor_form.js"></script>
+<script src="allowed_input_number_card.js"></script>
+<script src="allowed_input_cvv.js"></script>
+<script src="allowed_input_name_holder.js"></script>
+
+</html>
