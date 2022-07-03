@@ -1,18 +1,43 @@
-$(function (){
-     const slider = {
-          sliderTime: 5000,
-          sliderTimerID: undefined,
-          currentSlideIndex: 0,
-          $slider: $('p'),
-          nextSlide() {
-               // slider.$slider.remove('id');
-               this.currentSlideIndex++
-               this.$slider[this.currentSlideIndex].attr('id', 'first')
+$(function () {
+    const autoSlider = {
+        sliderTime: 5000,
+        sliderTimerID: undefined,
+        $slider: $('p'),
+        nextSlide() {
+            let currentSlide = $('p.active'),
+                currentSlideIndex = currentSlide.index(),
+                nextSlide = currentSlide.next(),
+                nextSlideIndex = currentSlideIndex + 1;
+            currentSlide.removeClass('active');
+            if (nextSlideIndex === ($('p').length)) {
+                $("#first").addClass('active')
+            } else {
+                nextSlide.addClass('active');
+            }
+        },
+        startSlider() {
+            autoSlider.sliderTimerID = setInterval(this.nextSlide, autoSlider.sliderTime)
+        },
+    }
 
-          }
-     }
+    autoSlider.startSlider();
 
-     $('#next').on('click', () => {
-          slider.nextSlide();
-     })
+    $('#next').on('click', () => {
+        autoSlider.nextSlide();
+        clearInterval(autoSlider.sliderTimerID);
+        autoSlider.sliderTimerID = setInterval(autoSlider.nextSlide, autoSlider.sliderTime)
+    });
+
+    $('#prev').on('click', () => {
+        let currentSlide = $('p.active'),
+            currentSlideIndex = currentSlide.index(),
+            prevSlide = currentSlide.prev(),
+            prevSlideIndex = currentSlideIndex - 1;
+        currentSlide.removeClass('active');
+        if (prevSlideIndex === ($('p:first').index() - 1)) {
+            $("#last").addClass('active')
+        } else {
+            prevSlide.addClass('active');
+        }
+    });
 })
