@@ -2,9 +2,6 @@ $(function (){
     $('p').css({
         "width": "300",
         "height": "200",
-        "text-align": "center",
-        "margin-top": "50%",
-
     })
 })
 $(function () {
