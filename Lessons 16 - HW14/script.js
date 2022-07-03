@@ -10,22 +10,31 @@ $(function () {
                 nextSlideIndex = currentSlideIndex + 1;
             currentSlide.removeClass('active');
             if (nextSlideIndex === ($('p').length)) {
-                $("#first").addClass('active')
+                $("#first").addClass('active');
             } else {
                 nextSlide.addClass('active');
             }
         },
         startSlider() {
-            autoSlider.sliderTimerID = setInterval(this.nextSlide, autoSlider.sliderTime)
+            autoSlider.sliderTimerID = setInterval(this.nextSlide, autoSlider.sliderTime);
+        },
+        stopOnHover() {
+            $('p').hover(function () {
+                    clearInterval(autoSlider.sliderTimerID);
+                },
+                function () {
+                    autoSlider.sliderTimerID = setInterval(autoSlider.nextSlide, autoSlider.sliderTime);
+                })
         },
     }
 
     autoSlider.startSlider();
+    autoSlider.stopOnHover();
 
     $('#next').on('click', () => {
         autoSlider.nextSlide();
         clearInterval(autoSlider.sliderTimerID);
-        autoSlider.sliderTimerID = setInterval(autoSlider.nextSlide, autoSlider.sliderTime)
+        autoSlider.sliderTimerID = setInterval(autoSlider.nextSlide, autoSlider.sliderTime);
     });
 
     $('#prev').on('click', () => {
@@ -35,7 +44,7 @@ $(function () {
             prevSlideIndex = currentSlideIndex - 1;
         currentSlide.removeClass('active');
         if (prevSlideIndex === ($('p:first').index() - 1)) {
-            $("#last").addClass('active')
+            $("#last").addClass('active');
         } else {
             prevSlide.addClass('active');
         }
