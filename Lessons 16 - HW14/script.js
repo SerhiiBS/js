@@ -1,3 +1,12 @@
+$(function (){
+    $('p').css({
+        "width": "300",
+        "height": "200",
+        "text-align": "center",
+        "margin-top": "50%",
+
+    })
+})
 $(function () {
     const autoSlider = {
         sliderTime: 5000,
@@ -26,8 +35,7 @@ $(function () {
                     autoSlider.sliderTimerID = setInterval(autoSlider.nextSlide, autoSlider.sliderTime);
                 })
         },
-    }
-
+    };
     autoSlider.startSlider();
     autoSlider.stopOnHover();
 
