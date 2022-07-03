@@ -1,0 +1,15 @@
+{
+  "name": "hw-14.-npm-and-jquery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
