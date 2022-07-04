@@ -9,16 +9,16 @@ $.ajax({
         $('.js--humidity').html(response.main.humidity + '%')
         $('.js--speed').html(Math.round(response.wind.speed * 3.6) + ' km/h')
         $('.js--deg').html((function () {
-            if (response.wind.deg == 0) {
+            if (response.wind.deg === 0) {
                 return 'North'
             }
-            if (response.wind.deg == 90) {
+            if (response.wind.deg === 90) {
                 return 'East'
             }
-            if (response.wind.deg == 180) {
+            if (response.wind.deg === 180) {
                 return 'South'
             }
-            if (response.wind.deg == 270) {
+            if (response.wind.deg === 270) {
                 return 'West'
             }
             if (response.wind.deg > 90 && response.wind.deg < 180) {
