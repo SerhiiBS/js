@@ -24,13 +24,14 @@ fetch('https://jsonplaceholder.typicode.com/comments', {
         return response.json()
     })
     .then( data => {
-        data.forEach( item => {
+        data.find( item => {
 
             if (item.postId === findId ){
+                console.log(item)
                     document.querySelector('.js--comments').innerHTML = `
                     <div>Comments on the ${item.postId} post</div>
                    <div class="text"><div>Comment# ${item.id} email: ${item.email}</div>
-                    <div>Comments: ${item.body}</div></div>
+                    <div>Comment: ${item.body}</div></div>
                 </div>`;
             }
         })
