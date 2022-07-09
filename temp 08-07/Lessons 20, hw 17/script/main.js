@@ -25,9 +25,9 @@ fetch('https://jsonplaceholder.typicode.com/comments', {
     })
     .then( data => {
         data.find( item => {
-
             if (item.postId === findId ){
                 console.log(item)
+                // document.querySelector('.js--comments').innerHTML = `${item}`
                     document.querySelector('.js--comments').innerHTML = `
                     <div>Comments on the ${item.postId} post</div>
                    <div class="text"><div>Comment# ${item.id} email: ${item.email}</div>
