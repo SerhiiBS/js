@@ -16,33 +16,25 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
             }
         })
     })
-fetch('https://jsonplaceholder.typicode.com/comments', {
+fetch(`https://jsonplaceholder.typicode.com/comments?postId=${findId}`, {
     method: "GET",
 })
     .then( (response) => {
         // console.log(response.text())
-        return response.json()
+        return response.text()
     })
-    .then( data => {
-        data.find( item => {
-            if (item.postId === findId ) {
-                let value = item;
-                console.log(value)
-            }
-
-
+    .then( (data) => {
+        document.querySelector('.js--comments').innerHTML = `${data}`
         })
         // data.find( item => {
         //     if (item.postId === findId ){
         //         console.log(item)
-        //         // document.querySelector('.js--comments').innerHTML = `${item}`
+        //
         //             document.querySelector('.js--comments').innerHTML = `
         //             <div>Comments on the ${item.postId} post</div>
         //            <div class="text"><div>Comment# ${item.id} email: ${item.email}</div>
         //             <div>Comment: ${item.body}</div></div>
         //         </div>`;
-        //     }
-        // })
-    })
+
 
 
