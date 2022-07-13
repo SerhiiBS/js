@@ -1,20 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f8f8;
+}
 
-.js--id {
-    background-color: bisque;
-}
-.js--title {
-    background-color: aquamarine;
-}
-.js--body {
-    background-color: bisque;
-}
+.css-post {
+    border: 0px solid black;
+    margin-top: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
 
-.text {
-    background-color: aqua;
-    padding: 15px;
-    border: 1px black;
-    border-radius: 10px;
+    border-radius: 25px;
+    padding: 10px 10px;
 }
-.name {
-    background-color: bisque;
+.post--id {
+    color: #020342;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    text-align: center;
+    font-size: xx-large;
+}
+.post--body {
+    font-family: 'Mukta', sans-serif;
+    padding: 25px 25px;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+}
+.js--comments {
+    margin-top: 1%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+.css-commentID {
+    text-align: center;
+}
+.css-comment-info {
+    padding: 10px 10px;
+}
+.css-comment-body {
+    text-align: justify;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    font-size: 25px
+}
+.css-email {
+    padding-left: 25px;
+}
+.error {
+    display: flex;
+    margin-top: 10%;
+    justify-content: center;
+    color: darkred;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: xxx-large;
 }

@@ -1,48 +1,48 @@
-const findId = Number(prompt('Введіть номер посту від 0 до 100', '0'))
-//
-fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: "GET",
-})
-.then( (response) => {
-    // console.log(response.text())
-    return response.json()
-})
-    .then( (data) => {
-        data.forEach(item => {
-            if(item.id === findId) {
-                document.querySelector('.js--data').innerHTML = `<div class="text name"><div>Post# ${item.id}</div>
-                <div>Post title: ${item.title}</div></div>
-                <div class="text">${item.body}</div> `;
-            }
-        })
+
+const promise = (timeOut) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve(), timeOut);
     })
-fetch('https://jsonplaceholder.typicode.com/comments', {
-    method: "GET",
-})
-    .then( (response) => {
-        // console.log(response.text())
-        return response.json()
-    })
-    .then( data => {
-        data.find( item => {
-            if (item.postId === findId ) {
-                let value = item;
-                console.log(value)
-            }
+}
+const number = Number(prompt("Введіть номер посту від 0 до 100", "0"))
+const url = `https://jsonplaceholder.typicode.com/posts/`;
 
 
+function goPost() {
+    return promise(1000)
+        .then(() => fetch(`${url}${number}`))
+        .then((response) => {
+            if (response.status === 200) {
+                return response.json()
+            }
+            throw new Error('Something went wrong :(')
         })
-        // data.find( item => {
-        //     if (item.postId === findId ){
-        //         console.log(item)
-        //         // document.querySelector('.js--comments').innerHTML = `${item}`
-        //             document.querySelector('.js--comments').innerHTML = `
-        //             <div>Comments on the ${item.postId} post</div>
-        //            <div class="text"><div>Comment# ${item.id} email: ${item.email}</div>
-        //             <div>Comment: ${item.body}</div></div>
-        //         </div>`;
-        //     }
-        // })
+}
+function goComments() {
+    return promise(2000)
+        .then(() => fetch(`${url}${number}/comments`))
+        .then((response) => response.json())
+}
+
+goPost()
+    .then((data) => {
+        document.querySelector(".js--post").insertAdjacentHTML('beforeend', `
+        <div>
+        <div class="post--id">Post# ${data.id} ${data.title}</div>
+        <div class="post--body">${data.body}</div>`);
+        goComments()
+            .then(comments => {
+                comments.forEach(comment => {
+                    document.querySelector(".js--comments").insertAdjacentHTML(
+                        "beforeend",
+                        `
+                        <div class="css-comment-info"><div>Comment# ${comment.id}</div>
+                        <div class="css-email">email: ${comment.email}</div></div>
+                        <div class="css-comment-body"> ${comment.body}</div>`);});
+            });
+    })
+    .catch((error) => {
+        document.querySelector("body").innerHTML = `<div class="error">${error}</div>`
     })
 
 
