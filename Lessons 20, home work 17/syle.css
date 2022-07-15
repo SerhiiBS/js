@@ -1,0 +1,20 @@
+
+.js--id {
+    background-color: bisque;
+}
+.js--title {
+    background-color: aquamarine;
+}
+.js--body {
+    background-color: bisque;
+}
+
+.text {
+    background-color: aqua;
+    padding: 15px;
+    border: 1px black;
+    border-radius: 10px;
+}
+.name {
+    background-color: bisque;
+}
