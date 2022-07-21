@@ -26,18 +26,20 @@ app.post("/todos", (request, response) => {
     }).catch(err => response.status(400).send(err))
 })
 
-// app.put("/todos/:id", (req,res) => {
-//     const id = +req.params.id;
-//     const todo =
-//     todos = todos.map((e) => (e.id === +id ? todo : e));
-//     res.send(todo);
-// });
-//
-// app.delete("/todos", (req,res)=> {
-//     const id = req.params.id;
-//     todos = todos.filter((e) => e.id !== +id);
-//     response.send("Success");
-// })
+app.put("/todos/:id", (req,res) => {
+    const id = req.params.id;
+    const todo = req.body;
+    TodoModel.updateOne({ _id: id }, todo)
+        .then((r) => TodoModel.findById(id))
+        .then((r) => {
+            // r["update"] = Date()
+            res.send(r)
+        }).catch(err => res.status(400).send(err))
+});
+
+app.delete("/todos", (req,res)=> {
+    TodoModel.findByIdAndDelete(req.params.id).then(r => res.send(r)).catch(err => res.status(400).send(err))
+})
 
 app.listen(PORT, ()=> {
     console.log(`SERVER START ${PORT}`);
