@@ -1,0 +1,43 @@
+$bgColor: #8ec8e7;
+
+body {
+  background-color: $bgColor;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.main {
+  display: flex;
+  background-color: $bgColor;
+  width: 200px;
+  height: 20px;
+  justify-content: space-between;
+
+}
+.city {
+  display: flex;
+  justify-content: stretch;
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  justify-content: space-between;
+  vertical-align: middle;
+  background-color: $bgColor;
+}
+.cityStyle {
+  padding-top: 15px;
+  justify-items: center;
+  background-color: $bgColor;
+}
+.temp {
+  justify-items: end;
+  background-color: $bgColor;
+}
+.deg {
+  display: flex;
+  justify-content: end;
+  width: 200px;
+  height: 20px;
+  background-color: $bgColor;
+}
