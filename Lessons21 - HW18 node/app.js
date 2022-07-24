@@ -32,7 +32,6 @@ app.put("/todos/:id", (req,res) => {
     TodoModel.updateOne({ _id: id }, todo)
         .then((r) => TodoModel.findById(id))
         .then((r) => {
-            // r["update"] = Date()
             res.send(r)
         }).catch(err => res.status(400).send(err))
 });
