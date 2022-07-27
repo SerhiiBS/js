@@ -1,3 +1,26 @@
+/******/ (() => { // webpackBootstrap
+/******/ 	// The require scope
+/******/ 	var __webpack_require__ = {};
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+(() => {
+/*!*************************!*\
+  !*** ./src/js/index.js ***!
+  \*************************/
 function Tasks(input, todosWrapper) {
     this.input = document.querySelector(input);
     this.todosWrapper = document.querySelector(todosWrapper);
@@ -10,8 +33,28 @@ function Tasks(input, todosWrapper) {
         this.input.value = '';
     }
     this.complete = function(description, id, item) {
-    }
-    this.delete = function(id, item) {
+        const currentElement = item.querySelector(`[type="checkbox"]`)
+        const button = item.querySelector('button')
+        if (currentElement.checked) {
+            item.classList.add('todo-item__desc--underline');
+            button.disabled = false;
+        } else {
+            item.classList.remove('todo-item__desc--underline');
+            button.disabled = true;
+        }
+
+     }
+    this.delete = async function(id, item) {
+         item.remove()
+        try {
+            const response = await fetch(`http://localhost:3000/todos/${id}`, {
+                method: "DELETE"
+            });
+            const data = response.json();
+            return data
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     this.createTemplate = (description, checked, id) => { // TODO сказать про изменения
@@ -24,7 +67,7 @@ function Tasks(input, todosWrapper) {
                 <input type="checkbox" class="js--complete" ${checked ? 'checked="true"' : '' }>
                 <p class="todo-item__desc js--desc">${description}</p>
              </label>
-             <button class="form__button js--delete">Удалить</button>`
+             <button class="form__button js--delete" disabled>Удалить</button>`
         );
 
         item.querySelector('.js--delete').addEventListener('click', () => this.delete(id, item));
@@ -98,3 +141,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.js--form');
     form.addEventListener('submit', bindAddServerItem);
 })
+})();
+
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
+/*!*****************************!*\
+  !*** ./src/scss/index.scss ***!
+  \*****************************/
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+})();
+
+/******/ })()
+;
+//# sourceMappingURL=main.js.map
