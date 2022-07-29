@@ -45,13 +45,14 @@ function Tasks(input, todosWrapper) {
 
      }
     this.delete = async function(id, item) {
-         item.remove()
+
         try {
             const response = await fetch(`http://localhost:3000/todos/${id}`, {
                 method: "DELETE"
             });
-            const data = response.json();
-            return data
+            if (response.status === 200) {
+                item.remove()
+            }
         } catch (error) {
             console.log(error)
         }
