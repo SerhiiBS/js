@@ -2,25 +2,53 @@ function Tasks(input, todosWrapper) {
     this.input = document.querySelector(input);
     this.todosWrapper = document.querySelector(todosWrapper);
 
-    // async
+
 
     this.addItem = (event) => {
         event.preventDefault();
         this.todosWrapper.appendChild(this.createTemplate(this.input.value));
         this.input.value = '';
     }
-    this.complete = function(description, id, item) {
+
+    this.complete = async function (description, id, item) {
         const currentElement = item.querySelector(`[type="checkbox"]`)
-        const button = item.querySelector('button')
+        const button = item.querySelector('button');
         if (currentElement.checked) {
+                try {
+                    const response = await fetch(`http://localhost:3000/todos/${id}`, {
+                        method: "PUT",
+                        body: JSON.stringify({
+                            "id": id,
+                            "text": item.description,
+                            "checked": true,
+                        })
+                    });
+                    await response.json()
+                } catch (error) {
+                    console.log(error)
+                }
             item.classList.add('todo-item__desc--underline');
             button.disabled = false;
         } else {
+                try {
+                    const response = await fetch(`http://localhost:3000/todos/${id}`, {
+                        method: "PUT",
+                        body: JSON.stringify({
+                            "id": id,
+                            "text": item.description,
+                            "checked": false,
+                        })
+                    });
+                    await response.json()
+                } catch (error) {
+                    console.log(error)
+                }
             item.classList.remove('todo-item__desc--underline');
             button.disabled = true;
         }
 
-     }
+    }
+
     this.delete = async function(id, item) {
 
         try {

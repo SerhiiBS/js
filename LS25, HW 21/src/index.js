@@ -1,10 +1,16 @@
-class createForm {
-    _form = document.querySelector('.js--create-form');
-    constructor() {
-
-        this.input = function () {
-            this._form.innerHTML = `<input type="text">`
-        }
+class FormElement {
+    constructor(name, type, value) {
+        this.name = name;
+        this.type = type;
+        this.value = value;
+    }
+    showName() {
+        console.log(`Name: ${this.name}`);
+    }
+    getValue() {
+        return this.value;
     }
 }
-createForm
+class TextElement extends FormElement {
+
+}
