@@ -1,0 +1,24 @@
+body {
+    background-color: #b4dff3;
+}
+
+.js--create-form {
+    display: grid;
+    width: 30%;
+    height: 20%;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 10%;
+    background-color: #9ad5ec;
+
+}
+input, button {
+    margin-top: 10px;
+    justify-self: center;
+}
+button {
+    margin-bottom: 10px;
+    width: min-content;
+}
