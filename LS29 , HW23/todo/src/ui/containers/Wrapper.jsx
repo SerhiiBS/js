@@ -21,12 +21,12 @@ class Wrapper extends Component {
 
     removeItem({id}) {
         const { items } = this.state;
-        const removeItem = items.filter(item => {
+        const currenItems = items.filter(item => {
             if (item.id !== id)
-            return item
+                return item
         })
         this.setState({
-            items: removeItem
+            items: currenItems
         })
     }
 

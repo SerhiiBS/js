@@ -4,7 +4,7 @@ import Button from "./Button";
 
 class Item extends Component {
 
-    remove() {
+    removeItem() {
         const { id, removeItem } = this.props;
         removeItem({id})
     }
@@ -17,7 +17,7 @@ class Item extends Component {
                     <input type="checkbox" />
                     <p className="todo-item__desc">{description}</p>
                 </label>
-                <Button text="Удалить" onClick={this.remove.bind(this)}/>
+                <Button text="Удалить" onClick={this.removeItem.bind(this)}/>
             </div>
         )
     }
