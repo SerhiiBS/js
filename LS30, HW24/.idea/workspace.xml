@@ -5,31 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f149f38b-d1c6-45d8-a779-4330eb17432f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Form.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Item.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/todo-list/src/ui/containers/Wrapper.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/hw24.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Button.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/Form.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/components/Item.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/containers/Wrapper.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../untitled/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Form.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Item.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-list/src/ui/containers/Wrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/containers/Wrapper.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +82,7 @@
       <workItem from="1660822969353" duration="4000" />
       <workItem from="1660822989396" duration="182000" />
       <workItem from="1660823394837" duration="230000" />
-      <workItem from="1660823631640" duration="9936000" />
+      <workItem from="1660823631640" duration="18668000" />
     </task>
     <servers />
   </component>

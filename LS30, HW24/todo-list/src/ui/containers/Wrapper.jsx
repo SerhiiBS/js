@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 // Parts
 import Form from "../components/Form";
 import Item from "../components/Item";
@@ -6,6 +6,7 @@ import Item from "../components/Item";
 function Wrapper() {
 
     const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')) || []);
+    const [edit, setEdit] = useState(false);
 
     const addItem = ({id, description}) => {
 
@@ -14,10 +15,10 @@ function Wrapper() {
         localStorage.setItem('items', JSON.stringify(newItems))
     }
 
-    const updateItem = ({id, checked}) => {
+    const updateItem = ({id, checked, lineThrough}) => {
         const updateItems = items.map(item => {
             if (item.id === id) {
-                item.checked = checked;
+                item.checked = checked
             }
             return item;
         });
@@ -35,6 +36,18 @@ function Wrapper() {
         localStorage.setItem('items', JSON.stringify(deleteItem))
     }
 
+    const editItem = ({id, description}) => {
+        const editItem = items.filter(item => {
+            if (item.id === id) {
+                return item
+            }
+        })
+        if (edit === false) {
+            setEdit(true)
+        }
+    }
+
+
     return (
         <div className="container">
             <h1>TODO</h1>
@@ -51,7 +64,9 @@ function Wrapper() {
                         id={item.id}
                         removeItem={removeItem}
                         checked={item.checked}
+                        edit={item.edit}
                         description={item.description}
+                        editItem={editItem}
                     />
                 ))}
             </div>

@@ -1,17 +1,22 @@
 // Core
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import Button from "./Button";
 
 function Item(props) {
-    const {description, checked, id, updateItem, removeItem, items} = props;
+    const {description, checked, id, updateItem, removeItem, editItem} = props;
 
-    function handleChecked() {
+    const handleChecked = () => {
         updateItem({id, checked: !checked})
     }
 
-    function handleRemove() {
+    const handleRemove = () => {
         removeItem({id})
     }
+
+    const handleEdit = () => {
+        editItem({id})
+    }
+
 
     return (
         <div className="todo-item">
@@ -19,7 +24,7 @@ function Item(props) {
                 <input type="checkbox" onClick={handleChecked} defaultChecked={checked}/>
                 <p className="todo-item__desc">{description}</p>
             </label>
-            <Button text="Редактировать"/>
+            <Button text="Редактировать" onClick={handleEdit}/>
             <Button text="Удалить" onClick={handleRemove}/>
         </div>
     )

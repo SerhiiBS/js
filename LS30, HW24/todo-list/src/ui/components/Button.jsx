@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
-function Button (props) {
-        const {text} = props;
-        return (
-            <button className="form__button">{text}</button>
-        )
+function Button(props) {
+    const {text, onClick} = props;
+    return (
+        <button className="form__button" onClick={onClick}>{text}</button>
+    )
 }
 
 export default Button;
