@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f149f38b-d1c6-45d8-a779-4330eb17432f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/a.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Button.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Button.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-list/src/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Form.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-list/src/ui/components/Item.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/components/Item.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/todo-list/src/ui/containers/Wrapper.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/todo-list/src/ui/containers/Wrapper.jsx" afterDir="false" />
@@ -28,20 +29,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/serhii/Desktop/IT/js/LS30, HW24/todo-list",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/serhii/Desktop/IT/js/LS30, HW24/todo-list&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/todo-list" />
@@ -50,7 +51,7 @@
       <recent name="$PROJECT_DIR$/todo-list" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.npm start">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -64,8 +65,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/todo-list/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.npm start" />
       </list>
     </recent_temporary>
@@ -82,7 +94,9 @@
       <workItem from="1660822969353" duration="4000" />
       <workItem from="1660822989396" duration="182000" />
       <workItem from="1660823394837" duration="230000" />
-      <workItem from="1660823631640" duration="18668000" />
+      <workItem from="1660823631640" duration="24005000" />
+      <workItem from="1660896951610" duration="7059000" />
+      <workItem from="1661092951489" duration="9457000" />
     </task>
     <servers />
   </component>

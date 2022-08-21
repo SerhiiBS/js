@@ -6,16 +6,14 @@ import Item from "../components/Item";
 function Wrapper() {
 
     const [items, setItems] = useState(JSON.parse(localStorage.getItem('items')) || []);
-    const [edit, setEdit] = useState(false);
 
     const addItem = ({id, description}) => {
-
         const newItems = [...items, {id, description}];
         setItems(newItems)
         localStorage.setItem('items', JSON.stringify(newItems))
     }
 
-    const updateItem = ({id, checked, lineThrough}) => {
+    const updateItem = ({id, checked}) => {
         const updateItems = items.map(item => {
             if (item.id === id) {
                 item.checked = checked
@@ -36,15 +34,16 @@ function Wrapper() {
         localStorage.setItem('items', JSON.stringify(deleteItem))
     }
 
-    const editItem = ({id, description}) => {
-        const editItem = items.filter(item => {
+    const editItem = (id, newDescription) => {
+        const updateDescription = items.map(item => {
             if (item.id === id) {
+                item.description = newDescription;
                 return item
             }
+            return item
         })
-        if (edit === false) {
-            setEdit(true)
-        }
+        setItems(updateDescription)
+        localStorage.setItem('items', JSON.stringify(updateDescription))
     }
 
 

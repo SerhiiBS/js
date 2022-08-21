@@ -7,10 +7,12 @@ import Button from "./Button";
 function Form(props) {
     const {onAdd} = props;
 
-    function handleAdd(event) {
+    const handleAdd = (event) => {
         event.preventDefault();
-        onAdd({id: v4(), description: event.target.description.value})
-        event.target.description.value = '';
+        if (event.target.description.value !== '') {
+            onAdd({id: v4(), description: event.target.description.value})
+            event.target.description.value = '';
+        }
     }
 
     return (
