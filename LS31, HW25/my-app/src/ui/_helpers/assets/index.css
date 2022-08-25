@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&family=Inconsolata:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@900&family=Lobster&family=Playfair+Display:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    height: 100%;
+}
+body {
+    min-height: 100vh;
+}
+
+.main,
+.todo,
+.contacts,
+.about {
+    position: fixed;
+    height: 80vh;
+    width: 100%;
+    overflow: auto;
+}
+
+footer header {
+    height: 10vh;
+    align-items: center;
+}
+#root {
+    height: 100vh;
+}
+a {
+    text-decoration: none;
+}
+.header,
+.footer {
+    padding: 10px;
+    display: flex;
+}
+.logo {
+    padding-right: 30px;
+}
+.header__list {
+    display: flex;
+    list-style: none;
+}
+.header__list li {
+    padding: 10px;
+    font-family: 'EB Garamond', serif;
+    font-size: 20px;
+}
+.header__style {
+    margin-left: auto;
+    padding: 10px;
+}
+.header__style button {
+    border: none;
+}
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+
+}
+.header {
+    align-items: center;
+}
+.footer {
+    align-items: center;
+}
+.main__skills {
+    display: flex;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+
+}
+.main__skills li {
+    font-family: 'Libre Baskerville', serif;
+    padding-bottom: 1%;
+
+}
+.main__skills ul {
+    font-family: 'Inconsolata', monospace;
+}
+.main__blocks p {
+    margin-bottom: 5%;
+}
+.main__blocks {
+
+    margin-right: 5%;
+}
+.main__h1 {
+
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+}
+.about {
+    overflow: scroll;
+}
+.about p {
+    text-indent: 1.5em;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-align: justify;
+    font-family: 'Lobster', cursive;
+    box-sizing: content-box;
+    overflow-scrolling: auto;
+}
+.about__h2 {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: xx-large;
+}
+.header button {
+    border-radius: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'EB Garamond', serif;
+}
+.form {
+    display: flex;
+    background: #fff;
+    border: 1px solid;
+    border-radius: 10px;
+    width: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 10px;
+    align-items: center;
+}
+.form__input {
+    flex-grow: 1;
+    padding: 10px;
+}
+.form__button {
+    padding: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 100%;
+}
+
+.todo-item {
+    display: flex;
+    background: #9d9b9a;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid;
+    margin-top: 5px;
+    align-items: center;
+
+    min-height: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+
+}
+
+.todos-wrapper {
+    flex-grow: 1;
+    min-width: 100%;
+    height: 100%;
+    align-items: center;
+    margin: auto;
+}
+.todo-item__label {
+    display: flex;
+    flex-grow: 1;
+}
+.todo-item__desc {
+    flex-grow: 1;
+    padding-left: 10px;
+}
+.todo-item__desc--underline .todo-item__desc{
+    text-decoration: line-through;
+}
+.todo-input {
+    background: #696868;
+}
+.todo h1, h2 {
+    text-align: center;
+}
+ h1 {
+    text-align: center;
+     margin: 25px;
+}
+ .contacts__describe {
+     display: flex;
+     justify-content: space-around;
+ }
+ .contacts__describe img {
+     height: 250px;
+ }
+.contacts__describe ul {
+    text-align: center;
+}
+.contacts__describe li {
+    padding-bottom: 10px;
+    text-align: justify;
+}
