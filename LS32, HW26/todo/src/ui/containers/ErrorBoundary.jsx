@@ -9,8 +9,6 @@ class ErrorBoundary extends Component {
     }
 
     static getDerivedStateFromError(error) {
-        console.log({error})
-
         return {hasError: true,}
     }
 
@@ -26,7 +24,7 @@ class ErrorBoundary extends Component {
         const {hasError} = this.state
         const {children} = this.props
         return hasError
-            ? <div> Error <button onClick={this.handleReload}>Reload page =)</button> </div>
+            ? (<div> Error <button onClick={this.handleReload}>Reload page =)</button> </div>)
             : children;
     }
 }

@@ -1,8 +1,7 @@
 // Core
 import React, {useState} from 'react';
-import  {Form,Field} from "react-final-form";
 import Button from "./Button";
-import Input from "./Form/Input";
+
 
 function Item(props) {
     const {description, checked, id, updateItem, removeItem, editItem,} = props;

@@ -3,7 +3,7 @@ import React, {useState, Component} from 'react';
 import Form from "../components/Form";
 import Item from "../components/Item";
 import Button from "../components/Button";
-import ErrorBoundary from "./ErrorBoundary";
+
 
 function Wrapper() {
 
@@ -56,32 +56,30 @@ function Wrapper() {
 
 
     return (
-        <ErrorBoundary>
+        <div className="container">
             <Button text={'Test ErrorBoundary'} onClick={handleError}/>
-            {error && {test: 'error'}}
-            <div className="container">
-                <h1>TODO</h1>
-                <Form onAdd={addItem}/>
-                <br/>
-                <h2>TODOS</h2>
-                <br/>
-                <hr/>
-                <div className="todos-wrapper">
-                    {items.map((item) => (
-                        <Item
-                            updateItem={updateItem}
-                            key={item.id}
-                            id={item.id}
-                            removeItem={removeItem}
-                            checked={item.checked}
-                            edit={item.edit}
-                            description={item.description}
-                            editItem={editItem}
-                        />
-                    ))}
-                </div>
+            {error && {test: "error"}}
+            <h1>TODO</h1>
+            <Form onAdd={addItem}/>
+            <br/>
+            <h2>TODOS</h2>
+            <br/>
+            <hr/>
+            <div className="todos-wrapper">
+                {items.map((item) => (
+                    <Item
+                        updateItem={updateItem}
+                        key={item.id}
+                        id={item.id}
+                        removeItem={removeItem}
+                        checked={item.checked}
+                        edit={item.edit}
+                        description={item.description}
+                        editItem={editItem}
+                    />
+                ))}
             </div>
-        </ErrorBoundary>
+        </div>
     )
 
 }

@@ -1,17 +1,18 @@
 // Core
-import React, {useState} from 'react';
+import React from 'react';
 import {v4} from 'uuid';
-import {Form,Field} from "react-final-form";
+import {Form, Field} from "react-final-form";
 // Parts
 import Button from "./Button";
 import Input from "./Form/Input";
-import {TextField} from "@mui/material";
+
 
 function FormOld(props) {
     const {onAdd} = props;
 
     const onSubmit = (event) => {
-       onAdd({id: v4(), description: event.description});
+        onAdd({id: v4(), description: event.description});
+        event.description = '';
     };
 
     const validate = (values) => {
@@ -26,20 +27,15 @@ function FormOld(props) {
         <Form onSubmit={onSubmit}
               validate={validate}
               render={(helpers) => {
-                  const { handleSubmit, values, errors } = helpers;
+                  const {handleSubmit} = helpers;
                   return (<>
                           <form className="form" onSubmit={handleSubmit}>
                               <Field name={"description"} label={"todo"} component={Input} className="form__input"/>
                               <Button text="Добавить"/>
                           </form>
-                      </>
-
-                  )
-              }}
-
-        />
+                      </>)
+              }}/>
     )
-
 }
 
 
