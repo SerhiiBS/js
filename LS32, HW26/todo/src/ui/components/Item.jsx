@@ -35,8 +35,7 @@ function Item(props) {
             <label className="todo-item__label">
                 <input type="checkbox" onClick={handleChecked} defaultChecked={checked}/>
                 {input ?
-                    (<Field name="description" component={Input} />)
-                    // (<input type="text" name="description" className="todo-edit" onChange={inputValue}/>)
+                    (<input type="text" name="description" className="todo-edit" onChange={inputValue}/>)
                     : (<p className="todo-item__desc">{description}</p>)}
             </label>
             {input ?

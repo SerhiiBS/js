@@ -6,5 +6,6 @@ import './main.css';
 // Parts
 import Wrapper from './ui/containers/Wrapper';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Wrapper />);
