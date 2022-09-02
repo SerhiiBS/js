@@ -6,9 +6,10 @@ const Input = (props) => {
         alignSelf: "center",
     }
 
+    // console.log(input)
 
     return <>
-        <input onChange={input.onChange} value={input.value} { ...rest } />
+        <input type="text" { ...rest } { ...input }/>
         <br />
         {meta.error && meta.touched && <span style={required}>{meta.error}</span>}
     </>

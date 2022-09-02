@@ -1,8 +1,11 @@
-import React, {useState, Component} from 'react';
+import React, {useState} from 'react';
 // Parts
 import Form from "../components/Form";
 import Item from "../components/Item";
 import Button from "../components/Button";
+import {push} from "final-form-arrays";
+import item from "../components/Item";
+
 
 
 function Wrapper() {
@@ -18,7 +21,7 @@ function Wrapper() {
     const addItem = ({id, description}) => {
         const newItems = [...items, {id, description}];
         setItems(newItems)
-        localStorage.setItem('items', JSON.stringify(newItems))
+        localStorage.setItem('items', JSON.stringify(newItems));
     }
 
     const updateItem = ({id, checked}) => {
@@ -56,6 +59,7 @@ function Wrapper() {
 
 
     return (
+
         <div className="container">
             <Button text={'Test ErrorBoundary'} onClick={handleError}/>
             {error && {test: "error"}}
@@ -80,6 +84,8 @@ function Wrapper() {
                 ))}
             </div>
         </div>
+
+
     )
 
 }

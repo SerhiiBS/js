@@ -1,5 +1,5 @@
 // Core
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {v4} from 'uuid';
 import {Form, Field} from "react-final-form";
 import arrayMutators from 'final-form-arrays';
@@ -9,20 +9,20 @@ import Button from "./Button";
 import Input from "./Form/Input";
 import item from "./Item";
 
-const initValue = {fields: ['']};
+const initialValue = { description: [''] };
 
 
 function FormOld(props) {
     const {onAdd} = props;
-   
-    const onSubmit = (values, index) => {
 
-        const value = values.fields.map((item) => {
-            return item
+
+    const onSubmit = (values, form) => {
+        values.description.map(text => {
+            if (text !== '') {
+                onAdd({id: v4(), description: text})
+                form.reset(initialValue)
+            }
         })
-        console.log(value)
-
-
     };
 
     const validate = () => {
@@ -38,26 +38,26 @@ function FormOld(props) {
         <Form onSubmit={onSubmit}
               validate={validate}
               mutators={{...arrayMutators}}
-              initialValues={initValue}
+              initialValues={initialValue}
               render={(helpers) => {
-                  const {handleSubmit} = helpers;
+                  const {handleSubmit, form} = helpers;
 
                   return (<>
-                      <form className="form" onSubmit={handleSubmit}>
-                          <FieldArray name="fields">
+                      <form className="form" onSubmit={(value) => { handleSubmit(value, form) } } >
+                          <FieldArray name="description">
                               {({fields}) => (
-                                  <>{fields.map((name) =>
+                                  <>
+                                      {fields.map((name) =>
                                       <Field
                                       component={Input}
                                       name={name}
                                       key={name}
                                       className="form__input"/>)}
                                       <Button text="Добавить поле" onClick={() => fields.push('')}/>
-
                                   </>
                               )}
                           </FieldArray>
-                          <Button text="Добавить" />
+                          <Button text="Добавить" type="submit"/>
                       </form>
                   </>)
               }}/>
