@@ -13,11 +13,11 @@ const initialValue = { description: [''] };
 
 
 function FormOld(props) {
+
     const {onAdd} = props;
 
-
-    const onSubmit = (values, form) => {
-        values.description.map(text => {
+    const onSubmit = (values, form,) => {
+        values.description.map((text) => {
             if (text !== '') {
                 onAdd({id: v4(), description: text})
                 form.reset(initialValue)
@@ -25,43 +25,37 @@ function FormOld(props) {
         })
     };
 
-    const validate = () => {
-        // const errors = {};
-        // if (values.description === undefined) {
-        //     errors.description = 'Required and must contain more than 5 symbols'
-        // }
-        // return errors;
-    }
+    const minValue = value => isNaN(value) || value >= 5 ? undefined : `Должно быть не меньше ${5}`;
+
+    const required = value => (value ? undefined : 'Поле обязательное');
+
+    const validate = (...validators) => value => validators.reduce((error, validator) => error || validator(value), undefined);
 
     return (
-
         <Form onSubmit={onSubmit}
-              validate={validate}
               mutators={{...arrayMutators}}
               initialValues={initialValue}
               render={(helpers) => {
                   const {handleSubmit, form} = helpers;
-
                   return (<>
-                      <form className="form" onSubmit={(value) => { handleSubmit(value, form) } } >
+                      <form className="form" onSubmit={(value) => {
+                          handleSubmit(value, form)
+                      }}>
                           <FieldArray name="description">
-                              {({fields}) => (
-                                  <>
-                                      {fields.map((name) =>
-                                      <Field
-                                      component={Input}
-                                      name={name}
-                                      key={name}
-                                      className="form__input"/>)}
+                              {({fields}) => (<>
+                                      {fields.map((name) => <Field
+                                          validate={validate(required, minValue)}
+                                          component={Input}
+                                          name={name}
+                                          key={name}
+                                          className="form__input"/>)}
                                       <Button text="Добавить поле" onClick={() => fields.push('')}/>
-                                  </>
-                              )}
+                                  </>)}
                           </FieldArray>
                           <Button text="Добавить" type="submit"/>
                       </form>
                   </>)
-              }}/>
-    )
+              }}/>)
 }
 
 

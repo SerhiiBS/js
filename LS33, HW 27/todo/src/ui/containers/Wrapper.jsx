@@ -3,8 +3,7 @@ import React, {useState} from 'react';
 import Form from "../components/Form";
 import Item from "../components/Item";
 import Button from "../components/Button";
-import {push} from "final-form-arrays";
-import item from "../components/Item";
+
 
 
 
@@ -19,9 +18,11 @@ function Wrapper() {
     }
 
     const addItem = ({id, description}) => {
-        const newItems = [...items, {id, description}];
-        setItems(newItems)
-        localStorage.setItem('items', JSON.stringify(newItems));
+        setItems(value => {
+            const newItems = [...value, {id, description}];
+            localStorage.setItem('items', JSON.stringify(newItems))
+            return newItems
+        })
     }
 
     const updateItem = ({id, checked}) => {
@@ -57,10 +58,7 @@ function Wrapper() {
         localStorage.setItem('items', JSON.stringify(updateDescription))
     }
 
-
-    return (
-
-        <div className="container">
+    return (<div className="container">
             <Button text={'Test ErrorBoundary'} onClick={handleError}/>
             {error && {test: "error"}}
             <h1>TODO</h1>
@@ -70,8 +68,7 @@ function Wrapper() {
             <br/>
             <hr/>
             <div className="todos-wrapper">
-                {items.map((item) => (
-                    <Item
+                {items.map((item) => (<Item
                         updateItem={updateItem}
                         key={item.id}
                         id={item.id}
@@ -80,14 +77,9 @@ function Wrapper() {
                         edit={item.edit}
                         description={item.description}
                         editItem={editItem}
-                    />
-                ))}
+                    />))}
             </div>
-        </div>
-
-
-    )
-
+        </div>)
 }
 
 
