@@ -1,4 +1,4 @@
-import {increment, decrement} from "./engine/core/counter/slice";
+import {increment, decrement} from "../core/counter/slice";
 import {useDispatch, useSelector} from "react-redux";
 
 
